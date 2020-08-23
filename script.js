@@ -47,8 +47,8 @@ function time()
         m.innerHTML = minute;
         s.innerHTML = "0" + second;
     }
-    
-    
+
+
 }
 
 function stopCountdown(){
@@ -59,5 +59,6 @@ function playsound(){
     document.getElementById("timeend").style.display = "block";
     document.getElementById("timer").style.display = "none";
     let tune = new Audio("audio/firealarm.mp3");
-    tune.play();  
+    tune.volume = 0.1;
+    tune.play();
 }
