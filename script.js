@@ -33,7 +33,11 @@ function time()
         stopCountdown();
         playsound();
     }
-    if(minute < 10 && second <10){
+
+    if(minute > 10 && second > 10){
+        m.innerHTML = minute;
+        s.innerHTML = second;
+    }else if(minute < 10 && second <10){
         m.innerHTML = "0" + minute;
         s.innerHTML = "0" + second;
     }else if(minute <10){
