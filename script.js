@@ -1,6 +1,8 @@
+//taking input from prompt 
 let second = 0;
 let input = prompt("Input Minute of the timer: ");
 
+//validating the input
 if (input === ''){
     window.location.reload();
 }
@@ -15,10 +17,11 @@ minute -= 1;
 second = 60;
 
 let timer = setInterval(time, 1000);
-
+//fetching data using dom
 m = document.getElementById("minute");
 s = document.getElementById("seconds");
 
+//timer logic
 function time()
 {
 
@@ -43,7 +46,7 @@ function time()
     }else if(minute <10){
         m.innerHTML = "0" + minute;
         s.innerHTML = second;
-    }else {
+    }else if(second < 10){
         m.innerHTML = minute;
         s.innerHTML = "0" + second;
     }
