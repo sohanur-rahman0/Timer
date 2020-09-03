@@ -8,7 +8,7 @@ if (input === ''){
 }
 
 let minute = parseInt(input);
-
+// console.log(minute)
 if(Number.isNaN(minute)===true){
     window.location.reload();
 }
@@ -37,7 +37,7 @@ function time()
         playsound();
     }
 
-    if(minute > 10 && second > 10){
+    if(minute >= 10 && second >= 10){
         m.innerHTML = minute;
         s.innerHTML = second;
     }else if(minute < 10 && second <10){
