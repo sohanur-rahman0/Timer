@@ -3,13 +3,13 @@ let second = 0;
 let input = prompt("Input Minute of the timer: ");
 
 //validating the input
-if (input === ''){
+if (input === '') {
     window.location.reload();
 }
 
 let minute = parseInt(input);
 // console.log(minute)
-if(Number.isNaN(minute)===true){
+if (Number.isNaN(minute) === true) {
     window.location.reload();
 }
 
@@ -22,31 +22,30 @@ m = document.getElementById("minute");
 s = document.getElementById("seconds");
 
 //timer logic
-function time()
-{
+function time() {
 
-    if(second===0){
+    if (second === 0) {
         second = 60;
         minute -= 1;
     }
 
-    second-=1;
+    second -= 1;
 
-    if(minute === 0 && second === 0){
+    if (minute === 0 && second === 0) {
         stopCountdown();
         playsound();
     }
 
-    if(minute >= 10 && second >= 10){
+    if (minute >= 10 && second >= 10) {
         m.innerHTML = minute;
         s.innerHTML = second;
-    }else if(minute < 10 && second <10){
+    } else if (minute < 10 && second < 10) {
         m.innerHTML = "0" + minute;
         s.innerHTML = "0" + second;
-    }else if(minute <10){
+    } else if (minute < 10) {
         m.innerHTML = "0" + minute;
         s.innerHTML = second;
-    }else if(second < 10){
+    } else if (second < 10) {
         m.innerHTML = minute;
         s.innerHTML = "0" + second;
     }
@@ -54,11 +53,11 @@ function time()
 
 }
 
-function stopCountdown(){
+function stopCountdown() {
     clearInterval(timer);
 }
 
-function playsound(){
+function playsound() {
     document.getElementById("timeend").style.display = "block";
     document.getElementById("timer").style.display = "none";
     let tune = new Audio("audio/firealarm.mp3");
